@@ -1,0 +1,83 @@
+<dom-module id="todo-item-detail">
+
+    <style>
+
+        :host {
+            color: var(--todo-primary-color);
+        }
+
+        #todoItem {
+            display: flex;
+            background-color: var(--todo-open-color);
+            align-items: center;
+        }
+
+        #todoItem[done] {
+            background-color: var(--todo-done-color);
+        }
+
+        #title {
+            flex: 1 0 auto;
+            font-size: 1.2em;
+            padding: 0.25em;
+            margin: 0.5em;
+            color: var(--todo-text-color);
+            cursor: pointer;
+        }
+
+        #title:focus {
+            outline: dotted var(--todo-text-color) 2px;
+            cursor: text;
+        }
+
+        #controls {
+            flex: 0 0 15em;
+            display: flex;
+        }
+
+        #controls #done {
+            flex: 0 0 5em;
+            background-color: var(--todo-done-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #controls #remove{
+            flex: 1 1 auto;
+        }
+
+        .button {
+            @apply(--todo-button);
+        }
+
+        .button:active {
+            @apply(--todo-button-active);
+        }
+
+        .checkbox {
+            @apply(--todo-checkbox);
+        }
+
+    </style>
+    <template>
+        <div id="todoItem" done$="[[todoItem.done]]">
+            <div id="title" contenteditable="true">
+                <span>[[todoItem.title]]</span>
+            </div>
+            <div id="controls">
+                <div id="done">
+                    <input title="Done"
+                           class="checkbox"
+                           type="checkbox"
+                           checked="{{todoItem.done::change}}"/>
+                </div>
+                <div id="remove">
+                    <button class="button"
+                            on-tap="removeItem">Remove Item
+                    </button>
+                </div>
+            </div>
+        </div>
+    </template>
+</dom-module>

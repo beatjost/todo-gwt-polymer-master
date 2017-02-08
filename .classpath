@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java">
+		<attributes>
+			<attribute name="FROM_GRADLE_MODEL" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src/main/resources">
+		<attributes>
+			<attribute name="FROM_GRADLE_MODEL" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src/test/java">
+		<attributes>
+			<attribute name="FROM_GRADLE_MODEL" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
+	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Beat/.gradle/caches/modules-2/files-2.1/com.google.gwt/gwt-elemental/2.8.0-beta1/6ff34cfd3958e8d8027f6f91b4d859a90394493a/gwt-elemental-2.8.0-beta1.jar" sourcepath="C:/Users/Beat/.gradle/caches/modules-2/files-2.1/com.google.gwt/gwt-elemental/2.8.0-beta1/f668ec958f47edd4fe83c6be0c022ceb42def9e0/gwt-elemental-2.8.0-beta1-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Beat/.gradle/caches/modules-2/files-2.1/com.google.gwt/gwt-servlet/2.8.0-beta1/1a975aad013124472cd762dd7721e856274278fd/gwt-servlet-2.8.0-beta1.jar" sourcepath="C:/Users/Beat/.gradle/caches/modules-2/files-2.1/com.google.gwt/gwt-servlet/2.8.0-beta1/5bbd8a7e9c4b23ec246490ad4b2ef0d36a25046a/gwt-servlet-2.8.0-beta1-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Beat/.gradle/caches/modules-2/files-2.1/com.google.gwt/gwt-codeserver/2.8.0-beta1/626ad70fd8a3b1061707995a8bbc6db0f7761d0b/gwt-codeserver-2.8.0-beta1.jar" sourcepath="C:/Users/Beat/.gradle/caches/modules-2/files-2.1/com.google.gwt/gwt-codeserver/2.8.0-beta1/d33d940d4771833cfb7db7df136ffad5d424c264/gwt-codeserver-2.8.0-beta1-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

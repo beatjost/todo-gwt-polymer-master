@@ -1,0 +1,46 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'de.richsource.gradle.plugins:gwt-gradle-plugin:0.6'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: "java"
+apply plugin: "jetty"
+apply plugin: "eclipse"
+apply plugin: "gwt-compiler"
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+dependencies {
+    compile "com.google.gwt:gwt-user:2.8.0-beta1"
+    compile "com.google.gwt:gwt-elemental:2.8.0-beta1"
+    testCompile "junit:junit:4.12"
+	testCompile "com.codeborne:selenide:4.2"
+}
+
+gwt {
+    gwtVersion = "2.8.0-beta1"
+    sourceLevel = JavaVersion.VERSION_1_8
+    maxHeapSize = "1024M"
+
+    modules "name.christianbauer.todo.Todo"
+
+    superDev {
+        launcherDir = file("src/main/webapp")
+    }
+}
+
+tasks.withType(de.richsource.gradle.plugins.gwt.AbstractGwtActionTask) {
+//    args "-logLevel", "TRACE"
+    args "-generateJsInteropExports"
+    args "-noincremental" // TODO Yep, incremental compile is apparently broken right now in 2.8.0
+//    jvmArgs("-Dgwt.persistentunitcachedir=$project.buildDir/gwt/cache")
+}

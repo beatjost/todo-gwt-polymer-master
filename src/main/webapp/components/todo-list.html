@@ -1,0 +1,121 @@
+<link rel="import" href="todo-item-detail.html"/>
+
+<dom-module id="todo-list">
+
+    <style>
+
+        :host {
+            color: var(--todo-primary-color);
+        }
+
+        #title {
+            flex: 1;
+            font-size: x-large;
+            border-bottom: 2px solid var(--todo-primary-color);;
+            padding: 0.5em;
+        }
+
+        #status {
+            display: flex;
+        }
+
+        #status #total,
+        #status #open,
+        #status #done {
+            flex: 0 1 auto;
+            margin: 1em;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #status .label {
+            align-self: center;
+        }
+
+        #status .value {
+            align-self: center;
+            font-weight: bold;
+        }
+
+        #status #open .value {
+            color: var(--todo-open-color);
+        }
+
+        #status #done .value {
+            color: var(--todo-done-color);
+        }
+
+        #controls {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .button {
+            @apply(--todo-button);
+        }
+
+        .button:active {
+            @apply(--todo-button-active);
+        }
+
+        .todoItem {
+            display: flex;
+            align-items: center;
+            margin: 0.5em 0;
+        }
+
+        .todoItem .index {
+            flex: 1;
+            font-style: italic;
+            display: flex;
+            justify-content: center;
+            background-color: var(--todo-index-color);
+            margin: 0;
+            padding: 0.2em;
+            font-size: larger
+        }
+
+        .todoItem .detail {
+            flex: 19;
+        }
+
+    </style>
+    <template>
+        <div id="title">
+            GWT & Polymer TODO
+        </div>
+
+        <div id="status">
+            <div id="total">
+                <div class="label">Total</div>
+                <div class="value">[[todoItems.length]]</div>
+            </div>
+            <div id="open">
+                <div class="label">Open</div>
+                <div class="value">[[openItems]]</div>
+            </div>
+            <div id="done">
+                <div class="label">Done</div>
+                <div class="value">[[doneItems]]</div>
+            </div>
+        </div>
+
+        <div id="controls">
+            <button class="button" on-tap="addItem">Add Item</button>
+        </div>
+
+        <template is="dom-repeat" items="[[todoItems]]">
+            <div class="todoItem">
+                <div class="index"><span>[[calculateIndex(index)]]</span></div>
+                <div class="detail">
+                    <todo-item-detail
+                            todo-item="[[item]]"
+                            on-todo-item-changed="todoItemsChanged"
+                            on-todo-item-remove="removeItem"></todo-item-detail>
+                </div>
+            </div>
+        </template>
+
+    </template>
+</dom-module>
+

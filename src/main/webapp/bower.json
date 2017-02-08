@@ -1,0 +1,19 @@
+{
+  "name": "todo-gwt-polymer",
+  "version": "1.0.0-SNAPSHOT",
+  "homepage": "https://github.com/christianbauer/todo-gwt-polymer",
+  "authors": [
+    "Christian Bauer <cb@4thline.com>"
+  ],
+  "license": "Public Domain",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0"
+  }
+}
